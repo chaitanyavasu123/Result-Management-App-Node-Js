@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result Management Application</title>
+    <link rel="stylesheet" src="../public/basic.css" />
+    <style>
+      body {
+        background-color: aquamarine;
+        align-items: center;
+        justify-content: center;
+      }
+      .login-container {
+        width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: aqua;
+      }
+      button {
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      /* Hover effect */
+      button:hover {
+        background-color: aquamarine;
+      }
+
+      /* Focus effect */
+      button:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
+      }
+      .button-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two columns, each with equal fraction */
+        gap: 10px; /* Gap between buttons */
+      }
+      h2 {
+        margin-left: 35%;
+        /* margin-right:50%; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <header>
+        <h1 class="my-header">Result Management System</h1>
+      </header>
+      <body>
+        <h2>Login as</h2>
+        <div id="button-container">
+          <a href="/teacherlogin">
+            <button>Teacher</button>
+          </a>
+          <a href="/studentlogin">
+            <button>Student</button>
+          </a>
+        </div>
+      </body>
+    </div>
+  </body>
+</html>

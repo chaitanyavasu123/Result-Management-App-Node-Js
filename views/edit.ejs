@@ -1,0 +1,74 @@
+<!-- edit.ejs -->
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: aquamarine;
+    align-items: center;
+    justify-content: center;
+  }
+  .login-container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: aqua;
+  }
+  input[type="text"],
+  input[type="date"],
+  input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .form-group {
+    margin-bottom: 15px;
+  }
+  button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  /* Hover effect */
+  button:hover {
+    background-color: aquamarine;
+  }
+
+  /* Focus effect */
+  button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
+  }
+</style>
+<div class="login-container">
+  <h1>Edit Student Record</h1>
+  <form method="POST" action="/edit/<%= student.rollno %>">
+    <label for="dateOfBirth">Date of Birth:</label>
+    <input type="date" name="dateOfBirth" value="<%= student.dob %>" required />
+    <br />
+    <label for="name">Name:</label>
+    <input type="text" name="name" value="<%= student.name %>" required />
+    <br />
+    <label for="score">Score:</label>
+    <input
+      type="number"
+      name="score"
+      value="<%= student.score %>"
+      required
+      min="0"
+      max="100"
+    />
+    <br />
+    <button type="submit">Save Changes</button>
+  </form>
+  <a href="/teacherdash"><button>Cancel</button></a>
+</div>

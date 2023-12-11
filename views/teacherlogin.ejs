@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Teacher Login</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: aquamarine;
+        align-items: center;
+        justify-content: center;
+      }
+      .login-container {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: aqua;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      input[type="number"],
+      input[type="password"] {
+        width: 95%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      .error {
+        color: red;
+      }
+      button {
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      /* Hover effect */
+      button:hover {
+        background-color: aquamarine;
+      }
+
+      /* Focus effect */
+      button:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
+      }
+      .error-message {
+        background-color: #ffdddd;
+        color: #d8000c;
+        border: 1px solid #d8000c;
+        padding: 10px;
+        border-radius: 4px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <h2>Teacher Login</h2>
+      <% if (error) { %>
+      <p class="error-message"><%= error %></p>
+      <% } %>
+      <form action="/teacherlogin" method="POST">
+        <div class="form-group">
+          <label for="registrationNumber">Registration Number:</label>
+          <input
+            type="number"
+            id="registerNumber"
+            name="registerNumber"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+          <div class="error">
+            Password must be at least 6 characters long with one special
+            character.
+          </div>
+        </div>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </body>
+</html>
